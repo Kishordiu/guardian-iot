@@ -1,5 +1,5 @@
 import { ReactNode, useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import {
   LayoutDashboard,
   Cpu,
@@ -13,6 +13,7 @@ import {
   Shield,
   Bell,
   User,
+  Presentation,
 } from 'lucide-react';
 
 const navItems = [
@@ -40,6 +41,7 @@ function LiveClock() {
 
 export default function DashboardLayout({ children }: { children: ReactNode }) {
   const { pathname } = useLocation();
+  const navigate = useNavigate();
   const [sidebarOpen, setSidebarOpen] = useState(true);
 
   return (
@@ -108,6 +110,13 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
             </h1>
           </div>
           <div className="flex items-center gap-4">
+            <button
+              onClick={() => navigate('/present')}
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-primary/10 hover:bg-primary/20 text-primary text-xs font-semibold transition-colors"
+            >
+              <Presentation className="w-3.5 h-3.5" />
+              Present
+            </button>
             <LiveClock />
             <button className="relative p-1.5 rounded-md hover:bg-muted text-muted-foreground">
               <Bell className="w-4 h-4" />
