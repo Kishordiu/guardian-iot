@@ -11,6 +11,7 @@ import TelemetryPage from "./pages/TelemetryPage";
 import TamperEventsPage from "./pages/TamperEventsPage";
 import DeviceLifecyclePage from "./pages/DeviceLifecyclePage";
 import SecurityFlowPage from "./pages/SecurityFlowPage";
+import PresentationMode from "./pages/PresentationMode";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -21,18 +22,23 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <DashboardLayout>
-          <Routes>
-            <Route path="/" element={<DashboardOverview />} />
-            <Route path="/devices" element={<DevicesPage />} />
-            <Route path="/authentication" element={<AuthenticationPage />} />
-            <Route path="/telemetry" element={<TelemetryPage />} />
-            <Route path="/tamper-events" element={<TamperEventsPage />} />
-            <Route path="/device-lifecycle" element={<DeviceLifecyclePage />} />
-            <Route path="/security-flow" element={<SecurityFlowPage />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </DashboardLayout>
+        <Routes>
+          <Route path="/present" element={<PresentationMode />} />
+          <Route path="*" element={
+            <DashboardLayout>
+              <Routes>
+                <Route path="/" element={<DashboardOverview />} />
+                <Route path="/devices" element={<DevicesPage />} />
+                <Route path="/authentication" element={<AuthenticationPage />} />
+                <Route path="/telemetry" element={<TelemetryPage />} />
+                <Route path="/tamper-events" element={<TamperEventsPage />} />
+                <Route path="/device-lifecycle" element={<DeviceLifecyclePage />} />
+                <Route path="/security-flow" element={<SecurityFlowPage />} />
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </DashboardLayout>
+          } />
+        </Routes>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
