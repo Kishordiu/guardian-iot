@@ -42,12 +42,11 @@ jobs:
             echo "::error::No supported lockfile found."
             exit 1
           fi
-            - name: Commit lockfile and formatting updates
+      - name: Commit lockfile and formatting updates
         shell: bash
         run: |
           set -euo pipefail
           git add package-lock.json
-          
           if git diff --cached --quiet; then
             echo "No file changes were necessary."
           else
