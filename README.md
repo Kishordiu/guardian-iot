@@ -10,7 +10,9 @@ Guardian IoT is a security-oriented operations interface built around a simple q
 
 ## THE EXPERIENCE
 
-**Surface state before detail.**  \n**Make trust readable.**  \n**Design the console for fast decisions.**
+**Surface state before detail.**  
+**Make trust readable.**  
+**Design the console for fast decisions.**
 
 ## THE SYSTEM
 
