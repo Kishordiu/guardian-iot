@@ -22,25 +22,22 @@ React 18 · TypeScript · Vite · Tailwind CSS · shadcn/ui · React Router · R
 
 ## RUN
 
-**Requirements:** Node.js 20+ and npm.
+Requirements: Node.js and npm.
 
 ```bash
 npm ci
 npm run dev
 ```
 
-Vite prints the local development URL in the terminal. To check a production build:
+Vite prints the development URL. Quality checks:
 
 ```bash
 npm run build
-npm run preview
+npm run lint
+npm test
 ```
 
-To run the configured test suite:
-
-```bash
-npm run test
-```
+These commands cover the configured Vite build, ESLint and Vitest scripts.
 
 ## PROJECT STATE
 
