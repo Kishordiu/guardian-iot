@@ -28,8 +28,7 @@ jobs:
         run: |
           set -euo pipefail
           if [ -f package-lock.json ]; then
-            npm install --package-lock-only --ignore-scripts --no-audit --no-fund
-            npm ci
+            npm install --no-audit --no-fund
             echo "PACKAGE_RUNNER=npm" >> "$GITHUB_ENV"
           elif [ -f bun.lock ] || [ -f bun.lockb ]; then
             bun install --frozen-lockfile
