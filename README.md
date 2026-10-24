@@ -1,5 +1,7 @@
 ![GUARDIAN IOT — bespoke brushed-metal project artwork](./assets/readme-metal-hero.svg)
 
+# GUARDIAN IOT
+
 > **DEVICE VISIBILITY / TRUST.**
 
 ## THE PREMISE
