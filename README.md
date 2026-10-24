@@ -2,51 +2,55 @@
 
 # GUARDIAN IOT
 
-> **DEVICE VISIBILITY / TRUST.**
+**A security-operations interface concept for reviewing device lifecycle, trust states, telemetry, and tamper-related events.**
 
-## THE PREMISE
+Guardian IoT explores the operator questions around a connected fleet: which devices are registered, what state is being shown, and what needs attention? The current dashboard reads from `src/data/mockData`, so the displayed fleet and events are demonstration data rather than live telemetry.
 
-Guardian IoT is a security-oriented operations interface built around a simple question: can an operator understand what the connected fleet is doing before something becomes an incident?
+## Read the dashboard as a system
 
-## THE EXPERIENCE
+```text
+Sample device records + sample events
+                │
+                ▼
+        Device state overview
+                │
+      ┌─────────┼──────────┐
+      ▼         ▼          ▼
+  Inventory  Telemetry   Tamper events
+      │         │          │
+      └─────────┴──────────┘
+           Operator review
+```
 
-**Surface state before detail.**  
-**Make trust readable.**  
-**Design the console for fast decisions.**
+## Included experience
 
-## THE SYSTEM
+- **System overview:** Summary cards for sample device states and alerts.
+- **Device lifecycle:** Screens for considering onboarding, device status, and lifecycle changes.
+- **Telemetry view:** A visual surface for device-oriented signals.
+- **Security flow:** A step-by-step representation of a proposed boot, verification, operation, and tamper-response lifecycle.
+- **Presentation mode:** A focused view for explaining the product concept.
 
-Reusable React components drive device/status views, while routing and charting keep the interface structured for a larger connected-system control plane.
+## Stack
 
-## THE STACK
+React · TypeScript · Vite · Tailwind CSS · React Router · reusable security UI components
 
-React 18 · TypeScript · Vite · Tailwind CSS · shadcn/ui · React Router · Recharts · Vitest
+## Run locally
 
-## RUN
-
-Requirements: Node.js and npm.
+**Requirements:** Node.js and npm.
 
 ```bash
+git clone https://github.com/Kishordiu/guardian-iot.git
+cd guardian-iot
 npm ci
 npm run dev
 ```
 
-Vite prints the development URL. Quality checks:
+Run `npm run lint` and `npm test` before preparing a build.
 
-```bash
-npm run build
-npm run lint
-npm test
-```
+## Trust boundary
 
-These commands cover the configured Vite build, ESLint and Vitest scripts.
-
-## PROJECT STATE
-
-**Prototype / active development**
-
-The repository documents the capabilities that are actually implemented; future integrations are intentionally separated from the current product surface.
+**This repository is a frontend prototype using mock data.** The security-flow screen is a visual explanation, not proof that secure boot, cryptographic device attestation, physical tamper sensors, key erasure, Wi-Fi/Bluetooth shutdown, or automated lockdown are implemented. Connect and independently test a backend and hardware layer before using it for security operations.
 
 ---
 
-<p align="center"><strong>K. KISHOR KUMAR</strong><br><sub>ENGINEERING / PRODUCT / SYSTEMS</sub></p>
+<p align="center"><sub>DIU FOUNDRY · DEVICE TRUST / OPERATIONS INTERFACE</sub></p>
