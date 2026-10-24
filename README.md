@@ -1,6 +1,4 @@
-# GUARDIAN IOT
-
-![GUARDIAN IOT cinematic hero](https://capsule-render.vercel.app/api?type=rect&color=0:070707,100:171717&height=230&text=GUARDIAN%20IOT&fontColor=F3F3EE&fontSize=40&fontAlignY=38&desc=DEVICE%20VISIBILITY%20%2F%20TRUST&descColor=999991&descSize=12&descAlignY=66&animation=fadeIn)
+![GUARDIAN IOT — bespoke brushed-metal project artwork](./assets/readme-metal-hero.svg)
 
 > **DEVICE VISIBILITY / TRUST.**
 
